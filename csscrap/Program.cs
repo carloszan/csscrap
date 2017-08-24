@@ -11,8 +11,7 @@ namespace csscrap
 
             var s = wb.ItensList();
 
- 
-            ExcelOutput e = new ExcelOutput(s);
+            ExcelOutput e = new ExcelOutput("tabela", "Tabela");
             e.Save();
 
             //Console.ReadLine();

@@ -7,6 +7,9 @@ namespace csscrap
     
     class WebScraper
     {
+        private HtmlAgilityPack.HtmlWeb web;
+        private HtmlAgilityPack.HtmlDocument doc;
+
         public WebScraper(string url)
         {
             this.web = new HtmlAgilityPack.HtmlWeb();
@@ -42,7 +45,8 @@ namespace csscrap
                 {
                     if (j == 5)
                     {
-                        List<string> copy = new List<string>(aux); //deep copy. could code a Clone Method but this works
+                        //deep copy. could code a Clone Method but this works
+                        List<string> copy = new List<string>(aux);
                         tableList.Add(copy);
                         aux.Clear();
                         j = 0;
@@ -55,8 +59,5 @@ namespace csscrap
 
             return tableList;
         }
-
-        private HtmlAgilityPack.HtmlWeb web;
-        private HtmlAgilityPack.HtmlDocument doc;
     }
 }

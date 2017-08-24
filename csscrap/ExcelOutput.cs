@@ -5,9 +5,13 @@ namespace csscrap
 {
     class ExcelOutput
     {
-        public ExcelOutput()
+        private ClosedXML.Excel.XLWorkbook workbook;
+        private List<List<string>> table;
+
+        public ExcelOutput(string book, string sheet)
         {
-           
+            this.workbook = new ClosedXML.Excel.XLWorkbook(book + ".xlsx");
+            InsertIntoWorkbook(sheet);
         }
 
         public ExcelOutput(List<List<string>> table)
@@ -28,6 +32,15 @@ namespace csscrap
             this.workbook.SaveAs(name + ".xlsx");
         }
 
+        private void InsertIntoWorkbook(string sheet)
+        {
+            var worksheet = this.workbook.Worksheet(sheet);
+
+            int j = worksheet.LastColumnUsed().ColumnNumber() + 1;
+
+            worksheet.Cell(1, j).Value = "got it";
+        }
+
         private void InsertIntoWorkbook()
         {
             var worksheet = this.workbook.Worksheets.Add("Tabela");
@@ -43,9 +56,5 @@ namespace csscrap
                 i++; j = 1;
             }
         }
-
-
-        private ClosedXML.Excel.XLWorkbook workbook;
-        private List<List<string>> table;
     }
 }
