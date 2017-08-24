@@ -8,9 +8,11 @@ namespace csscrap
         private ClosedXML.Excel.XLWorkbook workbook;
         private List<List<string>> table;
 
-        public ExcelOutput(string book, string sheet)
+        public ExcelOutput(List<List<string>> table, string book, string sheet)
         {
             this.workbook = new ClosedXML.Excel.XLWorkbook(book + ".xlsx");
+            this.table = table;
+
             InsertIntoWorkbook(sheet);
         }
 
@@ -32,13 +34,25 @@ namespace csscrap
             this.workbook.SaveAs(name + ".xlsx");
         }
 
+        // FIX ME
         private void InsertIntoWorkbook(string sheet)
         {
             var worksheet = this.workbook.Worksheet(sheet);
 
             int j = worksheet.LastColumnUsed().ColumnNumber() + 1;
 
-            worksheet.Cell(1, j).Value = "got it";
+            //worksheet.Cell(1, j).Value = "got it";
+
+            int i = 1;
+            foreach (var row in this.table)
+            {
+                foreach (var column in row)
+                {
+                    worksheet.Cell(i, j).Value = column;
+                    j++;
+                }
+                i++; j = worksheet.LastColumnUsed().ColumnNumber() + 1;
+            }
         }
 
         private void InsertIntoWorkbook()
