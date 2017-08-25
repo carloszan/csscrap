@@ -60,9 +60,9 @@ namespace csscrap
             return tableList;
         }
 
-        public List<List<string>> CommittedExpenses()
+        public List<string> CommittedExpenses()
         {
-            List<List<string>> tableList = new List<List<string>>();
+            List<string> tableList = new List<string>();
             var arrayRow = ItensRow().ToArray();
 
             int j = 0; int i;
@@ -72,10 +72,7 @@ namespace csscrap
                 {
                     if (j == 4)
                     {
-                        //deep copy. could code a Clone Method but this works
-                        List<string> copy = new List<string>();
-                        copy.Add(arrayRow[i]);
-                        tableList.Add(copy);
+                        tableList.Add(arrayRow[i]);
                     }
                     if (j == 7)
                         j = 0;
@@ -84,14 +81,10 @@ namespace csscrap
             }
 
             i++; i++;
-            List<string> copyD = new List<string>();
-            copyD.Add(arrayRow[i]);
-            tableList.Add(copyD);
+            tableList.Add(arrayRow[i]);
             for (int k = 0; k < 6; k++)
                 i++;
-            List<string> copyF = new List<string>();
-            copyF.Add(arrayRow[i]);
-            tableList.Add(copyF);
+            tableList.Add(arrayRow[i]);
 
             return tableList;
         }
