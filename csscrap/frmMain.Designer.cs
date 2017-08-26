@@ -35,6 +35,7 @@
             this.lblSheet = new System.Windows.Forms.Label();
             this.lblFile = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
+            this.pgBar = new System.Windows.Forms.ProgressBar();
             this.SuspendLayout();
             // 
             // txtLink
@@ -95,11 +96,19 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // pgBar
+            // 
+            this.pgBar.Location = new System.Drawing.Point(99, 189);
+            this.pgBar.Name = "pgBar";
+            this.pgBar.Size = new System.Drawing.Size(100, 23);
+            this.pgBar.TabIndex = 8;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
+            this.Controls.Add(this.pgBar);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.lblFile);
             this.Controls.Add(this.lblSheet);
@@ -125,5 +134,6 @@
         private System.Windows.Forms.Label lblSheet;
         private System.Windows.Forms.Label lblFile;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.ProgressBar pgBar;
     }
 }
