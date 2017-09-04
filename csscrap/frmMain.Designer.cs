@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.txtLink = new System.Windows.Forms.TextBox();
             this.txtSheet = new System.Windows.Forms.TextBox();
             this.txtFile = new System.Windows.Forms.TextBox();
@@ -36,25 +37,27 @@
             this.lblFile = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.pgBar = new System.Windows.Forms.ProgressBar();
+            this.lblCheck = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtLink
             // 
-            this.txtLink.Location = new System.Drawing.Point(53, 45);
+            this.txtLink.Location = new System.Drawing.Point(65, 45);
             this.txtLink.Name = "txtLink";
             this.txtLink.Size = new System.Drawing.Size(189, 20);
             this.txtLink.TabIndex = 0;
             // 
             // txtSheet
             // 
-            this.txtSheet.Location = new System.Drawing.Point(53, 71);
+            this.txtSheet.Location = new System.Drawing.Point(65, 71);
             this.txtSheet.Name = "txtSheet";
             this.txtSheet.Size = new System.Drawing.Size(189, 20);
             this.txtSheet.TabIndex = 1;
             // 
             // txtFile
             // 
-            this.txtFile.Location = new System.Drawing.Point(53, 97);
+            this.txtFile.Location = new System.Drawing.Point(65, 97);
             this.txtFile.Name = "txtFile";
             this.txtFile.Size = new System.Drawing.Size(189, 20);
             this.txtFile.TabIndex = 2;
@@ -103,11 +106,30 @@
             this.pgBar.Size = new System.Drawing.Size(100, 23);
             this.pgBar.TabIndex = 8;
             // 
+            // lblCheck
+            // 
+            this.lblCheck.AutoSize = true;
+            this.lblCheck.Location = new System.Drawing.Point(129, 219);
+            this.lblCheck.Name = "lblCheck";
+            this.lblCheck.Size = new System.Drawing.Size(0, 13);
+            this.lblCheck.TabIndex = 9;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(237, 250);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(36, 13);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Carlos";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblCheck);
             this.Controls.Add(this.pgBar);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.lblFile);
@@ -117,6 +139,7 @@
             this.Controls.Add(this.txtSheet);
             this.Controls.Add(this.txtLink);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmMain";
             this.Text = "Excel 4 Winner";
@@ -135,5 +158,7 @@
         private System.Windows.Forms.Label lblFile;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.ProgressBar pgBar;
+        private System.Windows.Forms.Label lblCheck;
+        private System.Windows.Forms.Label label2;
     }
 }
